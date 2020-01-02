@@ -7,10 +7,13 @@ class Book extends Component {
 		const { img, title, author } = this.props.info;
 
 		return (
-			<article>
+			<article className='book'>
 				<img src={img} alt='book' />
-				<h3>Title: {title} </h3>
-				<h5>Author: {author} </h5>
+
+				<div>
+					<h3>Title: {title} </h3>
+					<h5>Author: {author} </h5>
+				</div>
 			</article>
 		);
 	}

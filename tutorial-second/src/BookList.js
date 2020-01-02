@@ -16,7 +16,12 @@ class BookList extends Component {
 		// const books = this.state.books.map((item) => item.book);
 		// console.log(books);
 
-		return <section>{this.state.books.map((item) => <Book info={item} key={item.id} />)}</section>;
+		return (
+			<section>
+				<h1>Chomsky List</h1>
+				{this.state.books.map((item) => <Book info={item} key={item.id} />)}
+			</section>
+		);
 	}
 }
 
