@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import Book from './Book';
+import books from './BookData';
 
 class BookList extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			books: books
+		};
+	}
+
+	//this.setState({})
+
 	render() {
-		return (
-			<section>
-				<h3>This is our book list</h3>
-				<Book />
-			</section>
-		);
+		// const books = this.state.books.map((item) => item.book);
+		// console.log(books);
+
+		return <section>{this.state.books.map((item) => <Book info={item} key={item.id} />)}</section>;
 	}
 }
 
