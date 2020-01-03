@@ -10,13 +10,19 @@ class BookList extends Component {
 		};
 	}
 
-	//this.setState({})
+	handleDelete = () => {
+		console.log('passed from grandparent bookList component');
+	};
 
 	render() {
 		// const books = this.state.books.map((item) => item.book);
 		// console.log(books);
 
-		return <section>{this.state.books.map((item) => <Book info={item} key={item.id} />)}</section>;
+		return (
+			<section>
+				{this.state.books.map((item) => <Book handleDelete={this.handleDelete} info={item} key={item.id} />)}
+			</section>
+		);
 	}
 }
 
