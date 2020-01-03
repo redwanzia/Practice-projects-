@@ -10,8 +10,11 @@ class BookList extends Component {
 		};
 	}
 
-	handleDelete = () => {
-		console.log('passed from grandparent bookList component');
+	handleDelete = (id) => {
+		const sortedList = this.state.books.filter((item) => item.id !== id);
+		this.setState({
+			books: sortedList
+		});
 	};
 
 	render() {

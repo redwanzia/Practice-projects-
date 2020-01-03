@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from './Button';
 
 class Book extends Component {
 	constructor(props) {
@@ -25,8 +24,9 @@ class Book extends Component {
 	render() {
 		// console.log(this.props);
 
-		const { img, title, author } = this.props.info;
+		const { id, img, title, author } = this.props.info;
 		const { handleDelete } = this.props;
+
 		return (
 			<article className='book'>
 				<img src={img} alt='book' />
@@ -34,7 +34,9 @@ class Book extends Component {
 				<div>
 					<h3>Title: {title} </h3>
 					<h5>Author: {author} </h5>
-					<Button handleDelete={handleDelete} />
+					<button onClick={() => handleDelete(id)} type='button'>
+						Delete
+					</button>
 				</div>
 			</article>
 		);
