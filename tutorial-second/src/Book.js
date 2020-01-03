@@ -5,38 +5,36 @@ class Book extends Component {
 		super(props);
 		this.state = {
 			count: 1,
-			name: 'bob'
+			name: 'bob',
+			showInfo: true
 		};
-		// this.handleClick = this.handleClick.bind(this);
 	}
 
-	// handleClick() {
-	// 	console.log('Button Clicked');
-	// 	console.log(this.state.count);
-	// }
-
-	addCount = () => {
+	handleInfo = () => {
 		this.setState({
-			count: this.state.count + 1
+			showInfo: !this.state.showInfo
 		});
 	};
 
 	render() {
-		// console.log(this.props);
-
 		const { id, img, title, author } = this.props.info;
-		const { handleDelete } = this.props;
-
+		const checkInfo = (info) => {
+			if (info === true) {
+				return <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, iusto.</p>;
+			} else {
+				return null;
+			}
+		};
 		return (
 			<article className='book'>
 				<img src={img} alt='book' />
-
 				<div>
 					<h3>Title: {title} </h3>
 					<h5>Author: {author} </h5>
-					<button onClick={() => handleDelete(id)} type='button'>
-						Delete
+					<button onClick={this.handleInfo} type='button'>
+						Toggle Info
 					</button>
+					{checkInfo(this.state.showInfo)}
 				</div>
 			</article>
 		);
@@ -44,3 +42,11 @@ class Book extends Component {
 }
 
 export default Book;
+//&&
+// {this.state.showInfo && <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nostrum.</p>}
+
+// && ternary
+
+// {this.state.showInfo ? (
+// 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, iusto.</p>
+// ) : null}
