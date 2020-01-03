@@ -1,9 +1,16 @@
 import React from 'react';
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import './App.scss';
+import Navbar from './components/Navbar/Navbar';
+
+
 
 function App() {
-	return <h1>App Here</h1>;
+	return( 
+		<React.Fragment>
+			<Navbar/>
+		</React.Fragment>
+	)
 }
 
 export default App;
