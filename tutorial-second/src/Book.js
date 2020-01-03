@@ -4,7 +4,8 @@ class Book extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			count: 1
+			count: 1,
+			name: 'bob'
 		};
 		// this.handleClick = this.handleClick.bind(this);
 	}
@@ -14,9 +15,20 @@ class Book extends Component {
 	// 	console.log(this.state.count);
 	// }
 
-	handleClick = () => {
-		console.log('Button Clicked with arrow function ');
-		console.log(this.state.count);
+	addCount = () => {
+		this.setState({
+			count: this.state.count + 1
+		});
+	};
+	lowerCount = () => {
+		this.setState({
+			count: this.state.count - 1
+		});
+	};
+	resetCount = () => {
+		this.setState({
+			count: 0
+		});
 	};
 
 	render() {
@@ -31,8 +43,16 @@ class Book extends Component {
 				<div>
 					<h3>Title: {title} </h3>
 					<h5>Author: {author} </h5>
-					<button type='button' onClick={this.handleClick}>
-						Add Count
+					<h3> {this.state.count} </h3>
+					<h3> {this.state.name} </h3>
+					<button type='button' onClick={this.addCount}>
+						Add Count{' '}
+					</button>
+					<button type='button' onClick={this.resetCount}>
+						Reset Count{' '}
+					</button>
+					<button type='button' onClick={this.lowerCount}>
+						Lower Count{' '}
 					</button>
 				</div>
 			</article>
