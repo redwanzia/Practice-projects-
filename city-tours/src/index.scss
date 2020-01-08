@@ -7,9 +7,11 @@
 }
 
 $mainBlack:#222;
+$mainBlue:rgb(188, 221, 243);
 $mainGreen:#82b340;
 $mainWhite:#fff;
 $mainGray:#e4dede;
+$mainTransition: all .03s linear;
 
 
 
@@ -17,6 +19,6 @@ $mainGray:#e4dede;
 body{
 
   font-family: 'Open Sans', sans-serif;
-  background: $mainWhite;
+  background: $mainBlue;
   color: $mainBlack;
 }
