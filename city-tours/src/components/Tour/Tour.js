@@ -10,9 +10,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
     showInfo: false  
   }
   handleInfo = ()=>{
-
     this.setState({
-
       showInfo: !this.state.showInfo
     })
   }
@@ -26,7 +24,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 <article className='tour' >
     <div className = 'img-container' >
       <img src={img} alt="city image"/>
-      <span className = 'close-btn' >
+      <span onClick={()=>removeTour(id)} className = 'close-btn' >
       <a className='closeIcon' href="#">x</a>
       </span>
     </div>
