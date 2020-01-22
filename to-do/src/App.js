@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import ToDoInput from './components/toDoList/ToDoInput'
 import ToDoList from './components/toDoList/ToDoList'
-import ToDoItem from './components/toDoList/ToDoItem'
+// import ToDoItem from './components/toDoList/ToDoItem'
 
 
 import './App.css';
@@ -16,30 +16,55 @@ import './App.css';
 
   state = {
 
-    item:[{id:1, title:'wake up'},{id:2, title:'make breakfast'}],
+    items:[],
     id: uuid(),
     item:'', 
     edit: false
   }
 
-handleChange = (event) => {console.log('handlechange')}
-handleSubmit = (event) => {console.log('handleSubmit')}
-handleDelete = (id) => {console.log('handleDelete')}
-clearList = () => {console.log('clearList')}
-handleEdit = (id) => {console.log('handleEdit')}
-handleSubmit = (event) => {console.log('handleSubmit')}
+handleChange = (event) => {
+  this.setState({
+    item: event.target.value
+  })
+
+
+}
+handleSubmit = (event) => {
+event.preventDefault()
+const newItem ={
+id: this.state.id,
+title:this.state.item
+}
+
+const updatedItems =[...this.state.items,newItem];
+
+this.setState({
+
+items: updatedItems,
+item:'',
+id: uuid(),
+editItem:false
+
+}, 
+(event)=>console.log(this.state))
+
+}
+handleDelete = (id) => {}
+clearList = () => {}
+handleEdit = (id) => {}
+
 
 
   render() {
-    console.log(this.state)
+
     return (
       <div className="container">
         <div className='row' >
           <div className="col-10 mx-auto col-md-8 mt-5">
             <h3 className='text-capitalize text-center' >To Do Input</h3>
             <ToDoInput 
-            item = {this.state.item} 
-            handleChange={this.state.handleChange} 
+            items = {this.state.items} 
+            handleChange={this.handleChange} 
             handleSubmit= {this.handleSubmit} 
             editItem={this.state.editItem}/>
             <ToDoList 
