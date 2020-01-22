@@ -7,20 +7,16 @@
   background:$mainGray;
   margin: 2rem 0;
   box-shadow: 5px 10px 10px #888888;
-
-
-
-
 img{
   width: 100%;
   display: block;
   min-height: 13rem;
 }
-a{
- 
-  text-decoration: none;
-  
+
 }
+.tourIcon{
+
+  color: $mainGreen;
 }
 
 @media screen and (min-width:768px){
@@ -36,10 +32,10 @@ a{
 position: relative;
 
 }
-.closeIcon{
-color: $mainBlack;
+// .closeIcon{
+// color: $mainBlack;
   
-}
+// }
 
 .close-btn{
   
@@ -50,6 +46,8 @@ color: $mainBlack;
   font-size: 2rem;
   transition: $mainTransition;
   opacity: 0;
+  color: red;
+  cursor: pointer;
 
 }
 .img-container:hover .close-btn{
@@ -72,11 +70,12 @@ opacity: 1;
   h5{
 
     text-transform: capitalize;
-    a{
-      padding: 3px;
+    i{
+      margin-top: 2px;
       border-radius: 3px;
       border: 1px solid $mainBlack;
       color: green;
+      cursor: pointer;
     }
   }
 }
