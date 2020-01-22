@@ -19,7 +19,7 @@ import './App.css';
     items:[],
     id: uuid(),
     item:'', 
-    edit: false
+    editItem: false
   }
 
 handleChange = (event) => {
@@ -39,7 +39,6 @@ title:this.state.item
 const updatedItems =[...this.state.items,newItem];
 
 this.setState({
-
 items: updatedItems,
 item:'',
 id: uuid(),
@@ -48,10 +47,13 @@ editItem:false
 })
 
 }
-handleDelete = (id) => {console.log(`delete ${id}`)}
-  
+handleDelete = (id) => {
 
-
+    const filterItems = this.state.items.filter(item =>item.id !==id)
+    this.setState({
+      items: filterItems
+    })
+}
 
 clearList = () => {
   this.setState({
@@ -60,7 +62,19 @@ clearList = () => {
  }
 
  
-handleEdit = (id) => {console.log(`edit edit ${id}`)}
+handleEdit = (id) => {
+
+  const filterItems = this.state.items.filter(item =>item.id !==id)
+  const selectedItem = this.state.items.find(item =>item.id===id)
+  this.setState({
+    items: filterItems,
+    item: selectedItem.title,
+    id: id,
+    editItem:true
+  })
+
+
+}
 
 
 
@@ -72,7 +86,7 @@ handleEdit = (id) => {console.log(`edit edit ${id}`)}
           <div className="col-10 mx-auto col-md-8 mt-5">
             <h3 className='text-capitalize text-center' >To Do Input</h3>
             <ToDoInput 
-            items = {this.state.items} 
+            item = {this.state.item} 
             handleChange={this.handleChange} 
             handleSubmit= {this.handleSubmit} 
             editItem={this.state.editItem}/>

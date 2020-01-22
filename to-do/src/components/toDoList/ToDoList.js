@@ -14,7 +14,7 @@ import  ToDoItem  from './ToDoItem';
         {items.map(item =>{return(<ToDoItem 
           key={item.id} 
           title={item.title} 
-          handleEdit={handleEdit} 
+          
           handleDelete={ ()=>handleDelete(item.id)} 
           handleEdit={ ()=> handleEdit(item.id)} />
           )})}
