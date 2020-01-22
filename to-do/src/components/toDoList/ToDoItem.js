@@ -4,7 +4,7 @@ export class ToDoItem extends Component {
   render() {
     return (
       <div>
-        <h1>item</h1>
+        <h1>List</h1>
       </div>
     )
   }
