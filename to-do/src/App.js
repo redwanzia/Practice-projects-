@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import ToDoInput from './components/toDoList/ToDoInput'
 import ToDoList from './components/toDoList/ToDoList'
-// import ToDoItem from './components/toDoList/ToDoItem'
+
 
 
 import './App.css';
@@ -45,13 +45,22 @@ item:'',
 id: uuid(),
 editItem:false
 
-}, 
-(event)=>console.log(this.state))
+})
 
 }
-handleDelete = (id) => {}
-clearList = () => {}
-handleEdit = (id) => {}
+handleDelete = (id) => {console.log(`delete ${id}`)}
+  
+
+
+
+clearList = () => {
+  this.setState({
+    items:[]
+  })  
+ }
+
+ 
+handleEdit = (id) => {console.log(`edit edit ${id}`)}
 
 
 
@@ -69,7 +78,7 @@ handleEdit = (id) => {}
             editItem={this.state.editItem}/>
             <ToDoList 
             items={this.state.items} 
-            clearList={this.state.clearList} 
+            clearList={this.clearList} 
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}
             />
