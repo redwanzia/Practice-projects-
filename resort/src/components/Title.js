@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Title = ({title}) => {
   return (
     <div className='section-title' >
@@ -10,3 +11,5 @@ const Title = ({title}) => {
 }
 
 export default Title
+
+
