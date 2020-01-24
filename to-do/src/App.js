@@ -26,9 +26,8 @@ handleChange = (event) => {
   this.setState({
     item: event.target.value
   })
-
-
 }
+
 handleSubmit = (event) => {
 event.preventDefault()
 const newItem ={
@@ -61,7 +60,6 @@ clearList = () => {
   })  
  }
 
- 
 handleEdit = (id) => {
 
   const filterItems = this.state.items.filter(item =>item.id !==id)
@@ -72,12 +70,7 @@ handleEdit = (id) => {
     id: id,
     editItem:true
   })
-
-
 }
-
-
-
   render() {
 
     return (

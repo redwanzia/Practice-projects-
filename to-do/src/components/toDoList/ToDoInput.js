@@ -20,8 +20,7 @@ export class ToDoInput extends Component {
                 placeholder="add todo item"
                 value={item}
                 onChange={handleChange}
-                >
-                
+                >               
                 
                 
                 </input>
@@ -29,9 +28,8 @@ export class ToDoInput extends Component {
               </div>
               <button 
               type='submit' 
-              disabled= {item? false: true}
-              className= {
-                
+              disabled= {item ? false: true}
+              className= {                
               editItem
                 ? 'btn btn-block btn-success mt-3'
                 : 'btn btn-block btn-primary mt-3 text-uppercase '
