@@ -6,10 +6,7 @@ import Room from './Room'
 import Title from './Title'
 
  class FeaturedRoom extends Component {
-
   static contextType = RoomContext
-
-
   render() {  
     
     let {loading,featuredRooms : rooms} = this.context
@@ -20,20 +17,13 @@ import Title from './Title'
 
     return (
 
-      <section className='featured-room' > 
+      <section className='featured-rooms' > 
         <Title title='featured rooms'/>
         <div className='featured-rooms-center' >
-          {loading ? <Loading /> : rooms}
-        
-        </div>
-      
-
-
-             
-      </section>    
-
-
-
+          {loading ? <Loading /> : rooms}        
+        </div>             
+      </section> 
+       
       )
   }
 }
