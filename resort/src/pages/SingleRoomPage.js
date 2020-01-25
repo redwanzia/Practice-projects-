@@ -44,7 +44,6 @@ export class SingleRoomPage extends Component {
               Back to Rooms
             </Link>
           </Banner>
-
         </Hero>
     )
   }
