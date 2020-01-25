@@ -21,10 +21,10 @@ import NavBar from './components/NavBar'
       <div>
       <NavBar/>
       <Switch>      
-      <Route exact path='/' component={Home}/>
-      <Route exact path='/rooms' component={Rooms}/>
-      <Route exact path='/rooms/:slug' component={SingleRoomPage}/>
-      <Route component ={ErrorPage}/>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/rooms' component={Rooms}/>
+        <Route exact path='/rooms/:slug' component={SingleRoomPage}/>
+        <Route component ={ErrorPage}/>
       </Switch>
 
 
