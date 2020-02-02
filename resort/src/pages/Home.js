@@ -5,6 +5,7 @@ import Banner from '../components/Banner'
 import Services from '../components/Services'
 import FeaturedRoom from '../components/FeaturedRoom'
 
+
 const Home = () => {
   return (
     
@@ -16,6 +17,7 @@ const Home = () => {
     </Hero>
     <Services/>
     <FeaturedRoom/>
+   
 
 
   </React.Fragment>
