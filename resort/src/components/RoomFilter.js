@@ -6,13 +6,7 @@ import Title from '../components/Title'
 // get all unique values
 const getUnique = (items,value) =>{
   return [...new Set(items.map(item=> item[value]))]
-
-
 }
-
-
-
-
 const RoomFilter = ({rooms}) => {
 
   const context = useContext(RoomContext)
@@ -28,8 +22,6 @@ const RoomFilter = ({rooms}) => {
     breakfast,
     pets
   } = context
-
-
 
 //  get unique types
   let types = getUnique(rooms,'type')
@@ -47,7 +39,6 @@ const RoomFilter = ({rooms}) => {
     return <option value={item} key={index}> {item} </option> 
 
   }) 
-
 
 
   return (
@@ -122,24 +113,27 @@ const RoomFilter = ({rooms}) => {
       {/* extras */}
       <div className="form-group">
         <div className='single-extra' >
-          <input type="checkbox" name= 'breakfast' id='breakfast'/>
-          <label htmlFor="breakfast" checked= {breakfast} onChange={handleChange} >breakfast</label>
+          <input 
+          type="checkbox" 
+          name= 'breakfast' 
+          id='breakfast'
+          checked= {breakfast} 
+          onChange={handleChange}
+          />
+          <label htmlFor="breakfast"  >breakfast</label>
         </div>  
         <div className='single-extra' >
-          <input type="checkbox" name= 'pets' id='pets'/>
-          <label htmlFor="pets" checked= {pets} onChange={handleChange} >pets</label>
+          <input 
+          type="checkbox" 
+          name= 'pets' 
+          id='pets' 
+          checked= {pets} 
+          onChange={handleChange}  />
+          <label htmlFor="pets" >pets</label>
       </div>       
       </div>
-
-
-      {/* extras size */}
-      
-
-      </form>
-
-
-
-   
+      {/* extras size */}  
+      </form>   
     </section>
   )
 }

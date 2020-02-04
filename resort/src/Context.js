@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import items from './data'
 
-
 const RoomContext = React.createContext()
 
  class RoomProvider extends Component {
@@ -32,7 +31,7 @@ componentDidMount(){
     item.price))
   let maxSize = Math.max(...rooms.map(item =>
       item.size))
-      
+
   this.setState({ 
     rooms, 
     featuredRooms,
@@ -74,6 +73,8 @@ handleChange = event => {
   
 }
 
+
+
 filterRooms = ()=>{
   let {
     rooms, 
@@ -105,16 +106,16 @@ filterRooms = ()=>{
     tempRooms = tempRooms.filter(room =>room.price <= price)
 
     // filter by size
-    tempRooms = tempRooms.filter(room=> room.size >= minSize && room.size <= maxSize )
+    tempRooms = tempRooms.filter(room => room.size >= minSize && room.size <= maxSize )
 
     // filter by breakfast
       if(breakfast){
-        tempRooms = tempRooms.filter(room=> room.breakfast ===true)
+        tempRooms = tempRooms.filter(room => room.breakfast ===true)
       }
 
      // filter by pets
         if(pets){
-        tempRooms = tempRooms.filter(room=> room.pets ===true)
+        tempRooms = tempRooms.filter(room => room.pets ===true)
       }
 
 
