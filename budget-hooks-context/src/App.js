@@ -33,7 +33,7 @@ function App() {
         Total Spending: <span className='total' >
         ${expenses.reduce((acc,current) =>{
           return acc += current.amount
-          
+
         },0)}
         </span>
       </h1>
