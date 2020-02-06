@@ -26,8 +26,7 @@ function App() {
   const [amount,setAmount] = useState('')
 //************ functionality *********/
 
-const handleCharge = e => {
-  console.log(e.target.value);  
+const handleCharge = e => {  
   setCharge( e.target.value )
 }
 const handleAmount = e => {
@@ -35,9 +34,21 @@ const handleAmount = e => {
 }
 const handleSubmit = e => {
   e.preventDefault()
+  if(charge !=='' && amount>0){
+    const singleExpense = {id: uuid(), amount:amount, charge:charge }
+    setExpenses([...expenses,singleExpense])
+    setCharge('')
+    setAmount('')
+  
+
+
+  }else{
+
+    // add alert
+  }
+
 
 }
-
   return (
     <div >  
         
@@ -56,7 +67,7 @@ const handleSubmit = e => {
       <h1>
         Total Spending: <span className='total' >
         ${expenses.reduce((acc,current) =>{
-          return acc += current.amount
+          return acc += parseInt (current.amount)
 
         },0)}
         </span>
